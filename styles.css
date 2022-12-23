@@ -1,6 +1,19 @@
 body {
+margin: 0;
 background-color: #859ea9;
 color: #000000;
+}
+.container {
+width: 1000px;
+margin: 0 auto;
+/* Other styles */
+}
+/* Style for the main container element on smaller screens */
+@media (max-width: 600px) {
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
 }
 h1 {
 text-align: center;
