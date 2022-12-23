@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="styles.css">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body class="caveat-font">
+            <div>
+                <a href="./index.html" style="text-decoration: none;">
+                    <h1><img src="Signature.png"></h1>
+                </a>
+                <!-- <p>The start of something beautiful.™</p> -->
+                <div style="text-align: center;">
+                    <a href="./links.html" style="display: inline-block; margin-left: 16px;"><span><h2>Links</h2></span></a>
+                    <a href="./contact.html" style="display: inline-block; margin-left: 16px;"><span><h2>Contact Me</h2></span></a>
+                    <!-- <a href="./tierList.html" style="display: inline-block; margin-right: 16px;"><span><h2>Tier List</h2></span></a> -->
+                    <!-- <a href="./animation.html" style="display: inline-block; margin-left: 16px;"><span><h2>Game</h2></span></a> -->
+                </div>
+                <hr>
+            </div>
+            <br>
+            <div class="container"></div>
+                <form class="form-style" action="https://mailthis.to/amin.f1000@gmail.com" method="POST" encType="multipart/form-data" 
+                onsubmit="return showConfirmation()">
+
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" placeholder="name">
+
+                    <label for="email">Your Email</label>
+                    <input type="email" name="_replyto" placeholder="email">
+
+
+                    <label for="subject">Subject</label>
+                    <textarea name="message" placeholder="Enter your message here"></textarea>
+                
+                    <input type="submit" value="Send Email">
+                
+                </form>
+                <script>
+                    function showConfirmation() {
+                      alert("Your message has been sent!");
+                      return true;
+                    }
+                </script>
+            </div>
+        </body>
+    </html>
