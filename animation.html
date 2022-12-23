@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="styles.css">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body class="comic-sans">
+            <div>
+                <a href="./index.html" style="text-decoration: none;">
+                    <h1>Amin's Domain!!!</h1>
+                </a>
+                <p>The start of something beautiful.™</p>
+                <div style="text-align: center;">
+                    <a href="./tierList.html" style="display: inline-block; margin-right: 16px;"><span><h2>Tier List</h2></span></a>
+                    <a href="./animation.html" style="display: inline-block; margin-left: 16px;"><span><h2>Game</h2></span></a>
+                </div>
+                <hr>
+            </div>
+            <div id="coin-flip-game">
+                <button id="heads-button">Heads</button>
+                <button id="tails-button">Tails</button>
+                <div id="result"></div>
+                <script src="script.js"></script>
+            </div>
+            <canvas id="canvas" width="200" height="200"></canvas>
+            <script>
+                const coinElement = document.createElement("img"); // The coin image element
+                coinElement.src = "./coin.png"; // The path to the coin image
+                coinElement.alt = "Coin";
+
+                const canvasElement = document.getElementById("canvas"); // The canvas element
+                canvasElement.width = coinElement.width; // Set the width of the canvas to the width of the coin
+                canvasElement.height = coinElement.height; // Set the height of the canvas to the height of the coin
+                const context = canvasElement.getContext("2d"); // The 2D rendering context
+
+                let angle = 0; // The current rotation angle of the coin
+                let angularVelocity = 0.1; // The angular velocity of the coin (in radians per second)
+                let lastTime = 0; // The time of the last frame
+
+                function animate(time) {
+                    // Calculate the elapsed time since the last frame
+                let elapsedTime = time - lastTime;
+                lastTime = time;
+
+                // Update the angle based on the elapsed time and angular velocity
+                angle += angularVelocity * elapsedTime;
+
+                // Clear the canvas
+                context.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+                // Save the current state of the canvas
+                context.save();
+
+                // Translate the canvas to the center of the coin
+                context.translate(coinElement.width / 2, coinElement.height / 2);
+
+                // Rotate the canvas by the current angle
+                context.rotate(angle);
+
+                // Draw the coin image on the canvas
+                context.drawImage(coinElement, -coinElement.width / 2, -coinElement.height / 2);
+
+                // Restore the canvas to its original state
+                context.restore();
+
+                // Schedule the next frame
+                requestAnimationFrame(animate);
+                }
+
+                // Start the animation
+                requestAnimationFrame(animate);
+              </script>
+        </body>
+    </html>
