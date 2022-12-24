@@ -176,7 +176,7 @@ background-color: RoyalBlue;
   
   @media (max-width: 600px) {
     .textbox {
-      width: 60%;
+      width: 85%;
     }
   }
 
